@@ -142,7 +142,7 @@ int main(void)
 }
 
 // command to link all the wrkspace files before execution
-// gcc -o main main.c libcjson.a -lcurl -lm
+// gcc bashCalls.c main.c  -o main libcjson.a  -lcurl -lm
 // main         : object file
 // main.c       : source file   linked with
 // libcjson.a   : cjson library linked with
