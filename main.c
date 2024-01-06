@@ -87,14 +87,18 @@ void analyze_data(EnvironmentalData data) {
 void save_data(EnvironmentalData data) {
     FILE *fp = fopen("environment_data.txt", "a");
     if (fp != NULL) {
-        fprintf(fp, "Temperature: %f, Humidity: %f\n", data.temperature, data.humidity);
+        time_t t = time(NULL);
+        struct tm *timeinfo = localtime(&t);
+        char timestamp[25]; 
+        strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %I:%M:%S %p", timeinfo);
+
+        fprintf(fp, "%s, Temperature: %f, Humidity: %f\n", timestamp, data.temperature, data.humidity);
         fclose(fp);
     } else {
         // Handle file opening error
         printf("Failed to open file for writing.\n");
     }
 }
-
 
 int main(void) {
 
