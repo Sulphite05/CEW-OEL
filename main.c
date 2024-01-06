@@ -114,19 +114,9 @@ void analyze_data(EnvironmentalData data)
 void save_data(EnvironmentalData data)
 {
     FILE *fp = fopen("environment_data.txt", "a");
-<<<<<<< HEAD
-    if (fp != NULL) {
-        time_t t = time(NULL);
-        struct tm *timeinfo = localtime(&t);
-        char timestamp[25]; 
-        strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %I:%M:%S %p", timeinfo);
-
-        fprintf(fp, "%s, Temperature: %f, Humidity: %f\n", timestamp, data.temperature, data.humidity);
-=======
     if (fp != NULL)
     {
         fprintf(fp, "Temperature: %5.2f, Humidity: %f, WeatherDescription: %s, Visibility: %f\n", data.temperature, data.humidity, data.weatherDes, data.visibility);
->>>>>>> 6b0270c (On branch main)
         fclose(fp);
     }
     else
@@ -136,37 +126,6 @@ void save_data(EnvironmentalData data)
     }
 }
 
-<<<<<<< HEAD
-int main(void) {
-
-    FILE *fp;
-    char *url = "http://api.openweathermap.org/data/2.5/weather?q=Karachi&appid=ac40257f82101fbacf3f2dee95130387";
-    char outfilename[FILENAME_MAX] = "output.json";
-    char *receivedData = NULL;
-
-    // beginning of CURL specific functions to retrieve data
-    CURL *curl; 
-    CURLcode res;
-    curl = curl_easy_init();
-    if (curl) {
-        fp = fopen(outfilename,"wb");
-        curl_easy_setopt(curl, CURLOPT_URL, url);                           // sets option of URL
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteFileCallback);   // sets option of write function
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);                      // sets option of write data stream
-        res = curl_easy_perform(curl);                                      // performs the http request
-        curl_easy_cleanup(curl);
-        fclose(fp);
-    }
-    else{
-        printf("Failed to initialise CURL");
-    }
-    // End of CURL specific query setter
-
-    EnvironmentalData data = parse_data(cont);
-    analyze_data(data);
-    save_data(data);
-    free(receivedData);
-=======
 int main(void)
 {
     int i = 0;
@@ -179,7 +138,6 @@ int main(void)
     analyze_data(data[i]);
     save_data(data[i]);
     i += 1;
->>>>>>> 6b0270c (On branch main)
     return 0;
 }
 

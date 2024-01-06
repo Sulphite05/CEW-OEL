@@ -45,3 +45,8 @@ Sat 06 Jan 2024 03:20:54 PM +04
 
 
 
+Sat 06 Jan 2024 03:41:30 PM +04
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":297.05,"feels_like":296.31,"temp_min":297.05,"temp_max":297.05,"pressure":1017,"humidity":31},"visibility":6000,"wind":{"speed":4.12,"deg":60},"clouds":{"all":1},"dt":1704541211,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704507446,"sunset":1704545786},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
