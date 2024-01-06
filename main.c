@@ -1,91 +1,120 @@
-// This C program is using the libcurl library to make an HTTP request to the OpenWeatherMap API, 
-// retrieve weather data, and write the response to a local file. 
+// This C program is using the libcurl library to make an HTTP request to the OpenWeatherMap API,
+// retrieve weather data, and write the response to a local file.
 
 #include <stdio.h>
 #include <curl/curl.h>
 #include <string.h>
 #include <stdlib.h>
 #include "headers/cJSON.h"
+#include "headers/bashCalls.h"
 
-char* cont;
 
-typedef struct {
+typedef struct
+{ // struct to store Environmental data
     float temperature;
     float humidity;
+    char* weatherDes;
+    float visibility;
 
 } EnvironmentalData;
 
 
-static size_t WriteFileCallback(void *contents, size_t size, size_t nmemb, void *userp) {
-    FILE *fp = (FILE *)userp;
-    size_t written = fwrite(contents, size, nmemb, fp);
-    cont = contents;
-    return written;
-}
-
-
-EnvironmentalData parse_data(const char* json) {
+EnvironmentalData parse_data(const char *json)
+{
 
     cJSON *root = cJSON_Parse(json);
     cJSON_Print(root);
     EnvironmentalData data;
 
-    if (root != NULL) {
-        cJSON *mainObject = cJSON_GetObjectItem(root, "main");
+    if (root != NULL)
+    {
+        cJSON *mainObject = cJSON_GetObjectItem(root, "main");                      //hashmap
+        cJSON *weatherObject = cJSON_GetObjectItemCaseSensitive(root, "weather");   //array
+        cJSON *visibiltyObject = cJSON_GetObjectItem(root, "visibility");
+
 
         // Check if the "main" object and its properties exist
-        if (mainObject != NULL) {
+        if (mainObject != NULL && weatherObject != NULL)
+        {
             cJSON *tempItem = cJSON_GetObjectItem(mainObject, "temp");
             cJSON *humidityItem = cJSON_GetObjectItem(mainObject, "humidity");
+            cJSON *first_weather_entry = cJSON_GetArrayItem(weatherObject, 0);
 
+            // Get the "description" field from the first element
+            cJSON *description = cJSON_GetObjectItemCaseSensitive(first_weather_entry, "main");
             // Check if the temperature and humidity properties exist
-            if (tempItem != NULL && humidityItem != NULL) {
-                data.temperature = tempItem->valuedouble;
+            if (tempItem != NULL && humidityItem != NULL && description != NULL && visibiltyObject != NULL)
+            {
+                data.temperature = tempItem->valuedouble - 273;
                 data.humidity = humidityItem->valuedouble;
-            } else {
-                // Handle missing properties (optional)
-                // You can set default values or handle the case as needed.
+                data.weatherDes = strdup(description->valuestring); // Copy the description string
+                data.visibility = visibiltyObject->valuedouble;
+            }
+            else
+            {
+                // Handle missing properties
                 printf("missing properties error");
                 data.temperature = 0.0;
                 data.humidity = 0.0;
+                data.weatherDes = "NULL";
+                data.visibility = 0.0;
             }
-        } else {
-            // Handle missing "main" object (optional)
-            // You can set default values or handle the case as needed.
+        }
+        else
+        {
+            // Handle missing "main" object
             printf("missing main object");
             data.temperature = 0.0;
             data.humidity = 0.0;
+            data.weatherDes = "NULL";
+            data.visibility = 0.0;
         }
 
         cJSON_Delete(root);
-    } else {
-        // Handle JSON parsing error (optional)
-        // You can log an error message or handle the case as needed.
-         const char *error_ptr = cJSON_GetErrorPtr();
-    if (error_ptr != NULL) {
-        printf("JSON parsing error at position: %ld\n", error_ptr - json);
-    } else {
-        printf("JSON parsing error\n");
     }
+    else
+    {
+        // Handle JSON parsing error
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL)
+        {
+            printf("JSON parsing error at position: %ld\n", error_ptr - json);
+        }
+        else
+        {
+            printf("JSON parsing error\nCheck for Wifi connection\n");
+        }
 
-    data.temperature = 0.0;
-    data.humidity = 0.0;
-}
-
-
+        data.temperature = 0.0;
+        data.humidity = 0.0;
+        data.weatherDes = "NULL";
+        data.visibility = 0.0;
+    }
     return data;
 }
 
+void check_and_alert(EnvironmentalData data)
+{
+    if (data.temperature > 50.0)
+    {
+        system("echo 'Temperature alert' | mail -s 'Alert' user@example.com");
 
-void analyze_data(EnvironmentalData data) {
+    }
+}
 
-    if (data.temperature > 50.0) {
+void analyze_data(EnvironmentalData data)
+{
+
+    if (data.temperature > 30)
+    {
         printf("High temperature alert: %f\n", data.temperature);
     }
 }
 
-void save_data(EnvironmentalData data) {
+void save_data(EnvironmentalData data)
+{
     FILE *fp = fopen("environment_data.txt", "a");
+<<<<<<< HEAD
     if (fp != NULL) {
         time_t t = time(NULL);
         struct tm *timeinfo = localtime(&t);
@@ -93,13 +122,21 @@ void save_data(EnvironmentalData data) {
         strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %I:%M:%S %p", timeinfo);
 
         fprintf(fp, "%s, Temperature: %f, Humidity: %f\n", timestamp, data.temperature, data.humidity);
+=======
+    if (fp != NULL)
+    {
+        fprintf(fp, "Temperature: %5.2f, Humidity: %f, WeatherDescription: %s, Visibility: %f\n", data.temperature, data.humidity, data.weatherDes, data.visibility);
+>>>>>>> 6b0270c (On branch main)
         fclose(fp);
-    } else {
+    }
+    else
+    {
         // Handle file opening error
-        printf("Failed to open file for writing.\n");
+        printf("Failed to open file for writing data\n");
     }
 }
 
+<<<<<<< HEAD
 int main(void) {
 
     FILE *fp;
@@ -129,5 +166,29 @@ int main(void) {
     analyze_data(data);
     save_data(data);
     free(receivedData);
+=======
+int main(void)
+{
+    int i = 0;
+    EnvironmentalData *data = NULL; // an array of struct EnvironmentalData
+
+    char* cont = retrieveData();
+    printf("%s", cont);
+    data = realloc(data, sizeof(EnvironmentalData) * (i+1));
+    data[i] = parse_data(cont); // retrieves global variable containing content of current query
+    analyze_data(data[i]);
+    save_data(data[i]);
+    i += 1;
+>>>>>>> 6b0270c (On branch main)
     return 0;
 }
+
+// command to link all the wrkspace files before execution
+// gcc -o main main.c libcjson.a -lcurl -lm
+// main         : object file
+// main.c       : source file   linked with
+// libcjson.a   : cjson library linked with
+// -lcurl       : curl  library linked with
+// -lm          : math  library linked with
+// execuion command
+// ./main
