@@ -2,21 +2,10 @@
 // retrieve weather data, and write the response to a local file.
 
 #include <stdio.h>
-#include <curl/curl.h>
 #include <string.h>
 #include <stdlib.h>
 #include "headers/cJSON.h"
 #include "headers/bashCalls.h"
-
-
-typedef struct
-{ // struct to store Environmental data
-    float temperature;
-    float humidity;
-    char* weatherDes;
-    float visibility;
-
-} EnvironmentalData;
 
 
 EnvironmentalData parse_data(const char *json)
@@ -32,38 +21,24 @@ EnvironmentalData parse_data(const char *json)
         cJSON *weatherObject = cJSON_GetObjectItemCaseSensitive(root, "weather");   //array
         cJSON *visibiltyObject = cJSON_GetObjectItem(root, "visibility");
 
+        cJSON *tempItem = cJSON_GetObjectItem(mainObject, "temp");
+        cJSON *humidityItem = cJSON_GetObjectItem(mainObject, "humidity");
+        cJSON *first_weather_entry = cJSON_GetArrayItem(weatherObject, 0);
 
-        // Check if the "main" object and its properties exist
-        if (mainObject != NULL && weatherObject != NULL)
+        // Get the "description" field from the first element
+        cJSON *description = cJSON_GetObjectItemCaseSensitive(first_weather_entry, "main");
+        // Check if the temperature and humidity properties exist
+        if (tempItem != NULL && humidityItem != NULL && description != NULL && visibiltyObject != NULL)
         {
-            cJSON *tempItem = cJSON_GetObjectItem(mainObject, "temp");
-            cJSON *humidityItem = cJSON_GetObjectItem(mainObject, "humidity");
-            cJSON *first_weather_entry = cJSON_GetArrayItem(weatherObject, 0);
-
-            // Get the "description" field from the first element
-            cJSON *description = cJSON_GetObjectItemCaseSensitive(first_weather_entry, "main");
-            // Check if the temperature and humidity properties exist
-            if (tempItem != NULL && humidityItem != NULL && description != NULL && visibiltyObject != NULL)
-            {
-                data.temperature = tempItem->valuedouble - 273;
-                data.humidity = humidityItem->valuedouble;
-                data.weatherDes = strdup(description->valuestring); // Copy the description string
-                data.visibility = visibiltyObject->valuedouble;
-            }
-            else
-            {
-                // Handle missing properties
-                printf("missing properties error");
-                data.temperature = 0.0;
-                data.humidity = 0.0;
-                data.weatherDes = "NULL";
-                data.visibility = 0.0;
-            }
+            data.temperature = tempItem->valuedouble - 273;
+            data.humidity = humidityItem->valuedouble;
+            data.weatherDes = strdup(description->valuestring); // Copy the description string
+            data.visibility = visibiltyObject->valuedouble;
         }
         else
         {
-            // Handle missing "main" object
-            printf("missing main object");
+            // Handle missing properties
+            printf("missing properties error");
             data.temperature = 0.0;
             data.humidity = 0.0;
             data.weatherDes = "NULL";
@@ -93,24 +68,6 @@ EnvironmentalData parse_data(const char *json)
     return data;
 }
 
-void check_and_alert(EnvironmentalData data)
-{
-    if (data.temperature > 50.0)
-    {
-        system("echo 'Temperature alert' | mail -s 'Alert' user@example.com");
-
-    }
-}
-
-void analyze_data(EnvironmentalData data)
-{
-
-    if (data.temperature > 30)
-    {
-        printf("High temperature alert: %f\n", data.temperature);
-    }
-}
-
 void save_data(EnvironmentalData data)
 {
     FILE *fp = fopen("environment_data.txt", "a");
@@ -135,7 +92,7 @@ int main(void)
     printf("%s", cont);
     data = realloc(data, sizeof(EnvironmentalData) * (i+1));
     data[i] = parse_data(cont); // retrieves global variable containing content of current query
-    analyze_data(data[i]);
+    check_anomaly(data[i]);
     save_data(data[i]);
     i += 1;
     return 0;

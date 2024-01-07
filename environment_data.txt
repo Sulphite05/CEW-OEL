@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Temperature: 285.730011, Humidity: 29.000000
 Temperature: 285.730011, Humidity: 29.000000
 Temperature: 0.000000, Humidity: 0.000000
@@ -26,7 +25,6 @@ Temperature: 301.049988, Humidity: 32.000000
 Temperature: 301.049988, Humidity: 32.000000
 2024-01-06 09:38:20, Temperature: 291.049988, Humidity: 48.000000
 2024-01-06 10:32:24 AM, Temperature: 290.049988, Humidity: 48.000000
-=======
 Temperature: 26.05, Humidity: 19.000000
 Temperature: 26.05, Humidity: 19.000000
 Temperature: 17.05, Humidity: 48.000000
@@ -36,5 +34,13 @@ Temperature: 24.05, Humidity: 31.000000, WeatherDEscription: (null)
 Temperature: 24.05, Humidity: 31.000000, WeatherDEscription: (null)
 Temperature: 24.05, Humidity: 31.000000, WeatherDescription: clear sky
 Temperature: 24.05, Humidity: 31.000000, WeatherDescription: Clear, Visibility: 6000.000000
->>>>>>> 6b0270c (On branch main)
 Temperature: 24.05, Humidity: 31.000000, WeatherDescription: Clear, Visibility: 6000.000000
+Temperature: 24.05, Humidity: 31.000000, WeatherDescription: Haze, Visibility: 4000.000000
+Temperature: 24.05, Humidity: 31.000000, WeatherDescription: Haze, Visibility: 4000.000000
+Temperature: 24.05, Humidity: 31.000000, WeatherDescription: Haze, Visibility: 4000.000000
+Temperature: 25.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 4000.000000
+Temperature: 25.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 4000.000000
+Temperature: 25.05, Humidity: 29.000000, WeatherDescription: Haze, Visibility: 4000.000000
+Temperature:  0.00, Humidity: 0.000000, WeatherDescription: NULL, Visibility: 0.000000
+Temperature:  0.00, Humidity: 0.000000, WeatherDescription: NULL, Visibility: 0.000000
+Temperature: 17.05, Humidity: 34.000000, WeatherDescription: Haze, Visibility: 5000.000000
