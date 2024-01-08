@@ -68,33 +68,78 @@ EnvironmentalData parse_data(const char *json)
     return data;
 }
 
-void save_data(EnvironmentalData data)
-{
-    FILE *fp = fopen("environment_data.txt", "a");
-    if (fp != NULL)
-    {
-        fprintf(fp, "Temperature: %5.2f, Humidity: %f, WeatherDescription: %s, Visibility: %f\n", data.temperature, data.humidity, data.weatherDes, data.visibility);
-        fclose(fp);
-    }
-    else
-    {
-        // Handle file opening error
-        printf("Failed to open file for writing data\n");
-    }
-}
+// void save_data(EnvironmentalData data)
+// {
+//     const char *file_path = "enviro_store.json";
+
+//     // Read the existing JSON file
+//     FILE *file = fopen(file_path, "r");
+//     if (!file) {
+//         fprintf(stderr, "Error opening file for reading\n");
+//         return 1;
+//     }
+
+    // fseek(file, 0, SEEK_END);
+    // long file_size = ftell(file);
+    // fseek(file, 0, SEEK_SET);
+
+    // char *json_content = (char *)malloc(file_size + 1);
+    // fread(json_content, 1, file_size, file);
+    // json_content[file_size] = '\0';
+
+    // fclose(file);
+
+    // // Parse the existing JSON data
+    // cJSON *root = cJSON_Parse(json_content);
+    // free(json_content);
+
+    // if (!root) {
+    //     fprintf(stderr, "Error parsing JSON\n");
+    //     return 1;
+    // }
+
+    // // Append new records to the JSON array
+    // cJSON *new_records = cJSON_CreateArray();
+    // cJSON_AddItemToArray(new_records, cJSON_CreateObject());
+    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 0), "name", "Eve");
+    // cJSON_AddNumberToObject(cJSON_GetArrayItem(new_records, 0), "age", 28);
+    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 0), "city", "Chicago");
+
+    // cJSON_AddItemToArray(new_records, cJSON_CreateObject());
+    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 1), "name", "Charlie");
+    // cJSON_AddNumberToObject(cJSON_GetArrayItem(new_records, 1), "age", 35);
+    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 1), "city", "Seattle");
+
+    // cJSON_AddItemToArray(root, new_records);
+    
+    // // Write the updated JSON data back to the file
+    // file = fopen(file_path, "w");
+    // if (!file) {
+    //     fprintf(stderr, "Error opening file for writing\n");
+    //     cJSON_Delete(root);
+    //     return 1;
+    // }
+
+    // char *json_string = cJSON_Print(root);
+    // fprintf(file, "%s", json_string);
+    // fclose(file);
+//     free(json_string);
+
+//     cJSON_Delete(root);
+
+//     printf("New records have been appended to %s\n", file_path);
+
+//     return 0;
+// }
 
 int main(void)
 {
-    int i = 0;
-    EnvironmentalData *data = NULL; // an array of struct EnvironmentalData
-
+    EnvironmentalData data;
     char* cont = retrieveData();
     printf("%s", cont);
-    data = realloc(data, sizeof(EnvironmentalData) * (i+1));
-    data[i] = parse_data(cont); // retrieves global variable containing content of current query
-    check_anomaly(data[i]);
-    save_data(data[i]);
-    i += 1;
+    data = parse_data(cont); // retrieves global variable containing content of current query
+    check_anomaly(data);
+    // save_data(data);
     return 0;
 }
 

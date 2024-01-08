@@ -87,3 +87,78 @@ Sun Jan  7 10:30:01 PM PKT 2024
 
 
 
+Sun Jan  7 11:00:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50n"}],"base":"stations","main":{"temp":289.05,"feels_like":287.71,"temp_min":289.05,"temp_max":289.05,"pressure":1019,"humidity":39},"visibility":5000,"wind":{"speed":2.57,"deg":40},"clouds":{"all":0},"dt":1704650172,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704593857,"sunset":1704632228},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Sun Jan  7 11:17:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50n"}],"base":"stations","main":{"temp":289.05,"feels_like":287.51,"temp_min":289.05,"temp_max":289.05,"pressure":1019,"humidity":31},"visibility":5000,"wind":{"speed":2.06,"deg":30},"clouds":{"all":0},"dt":1704651108,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704593857,"sunset":1704632228},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 01:16:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":298.05,"feels_like":297.54,"temp_min":298.05,"temp_max":298.05,"pressure":1018,"humidity":36},"visibility":5000,"wind":{"speed":0,"deg":0},"clouds":{"all":0},"dt":1704701734,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 01:17:02 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":298.05,"feels_like":297.54,"temp_min":298.05,"temp_max":298.05,"pressure":1018,"humidity":36},"visibility":5000,"wind":{"speed":0,"deg":0},"clouds":{"all":0},"dt":1704701409,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 01:18:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":298.05,"feels_like":297.54,"temp_min":298.05,"temp_max":298.05,"pressure":1018,"humidity":36},"visibility":5000,"wind":{"speed":0,"deg":0},"clouds":{"all":0},"dt":1704701733,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 02:16:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":299.05,"feels_like":298.64,"temp_min":299.05,"temp_max":299.05,"pressure":1017,"humidity":36},"visibility":5000,"wind":{"speed":3.6,"deg":330},"clouds":{"all":0},"dt":1704704863,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 02:17:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":299.05,"feels_like":298.64,"temp_min":299.05,"temp_max":299.05,"pressure":1017,"humidity":36},"visibility":5000,"wind":{"speed":3.6,"deg":330},"clouds":{"all":0},"dt":1704705407,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 02:18:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":299.05,"feels_like":298.64,"temp_min":299.05,"temp_max":299.05,"pressure":1017,"humidity":36},"visibility":5000,"wind":{"speed":3.6,"deg":330},"clouds":{"all":0},"dt":1704705106,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 02:30:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":299.05,"feels_like":298.64,"temp_min":299.05,"temp_max":299.05,"pressure":1017,"humidity":36},"visibility":5000,"wind":{"speed":3.6,"deg":330},"clouds":{"all":0},"dt":1704706148,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 03:00:02 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":299.05,"feels_like":298.64,"temp_min":299.05,"temp_max":299.05,"pressure":1017,"humidity":36},"visibility":5000,"wind":{"speed":1.54,"deg":360},"clouds":{"all":0},"dt":1704707260,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 03:07:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":299.05,"feels_like":298.69,"temp_min":299.05,"temp_max":299.05,"pressure":1016,"humidity":38},"visibility":6000,"wind":{"speed":2.06,"deg":360},"clouds":{"all":0},"dt":1704708217,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 03:15:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":299.05,"feels_like":298.69,"temp_min":299.05,"temp_max":299.05,"pressure":1016,"humidity":38},"visibility":6000,"wind":{"speed":2.06,"deg":360},"clouds":{"all":0},"dt":1704708879,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 05:45:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":297.05,"feels_like":296.62,"temp_min":297.05,"temp_max":297.05,"pressure":1016,"humidity":43},"visibility":3000,"wind":{"speed":3.6,"deg":250},"clouds":{"all":20},"dt":1704717607,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon Jan  8 06:45:01 PM PKT 2024
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50n"}],"base":"stations","main":{"temp":295.05,"feels_like":294.68,"temp_min":295.05,"temp_max":295.05,"pressure":1017,"humidity":53},"visibility":2000,"wind":{"speed":3.09,"deg":130},"clouds":{"all":20},"dt":1704721461,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
+Mon 08 Jan 2024 06:57:42 PM PKT
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50n"}],"base":"stations","main":{"temp":295.05,"feels_like":294.68,"temp_min":295.05,"temp_max":295.05,"pressure":1017,"humidity":53},"visibility":2000,"wind":{"speed":3.09,"deg":130},"clouds":{"all":20},"dt":1704722060,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+

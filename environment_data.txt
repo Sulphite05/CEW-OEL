@@ -44,3 +44,17 @@ Temperature: 25.05, Humidity: 29.000000, WeatherDescription: Haze, Visibility: 4
 Temperature:  0.00, Humidity: 0.000000, WeatherDescription: NULL, Visibility: 0.000000
 Temperature:  0.00, Humidity: 0.000000, WeatherDescription: NULL, Visibility: 0.000000
 Temperature: 17.05, Humidity: 34.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 16.05, Humidity: 39.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 16.05, Humidity: 31.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature:  0.00, Humidity: 0.000000, WeatherDescription: NULL, Visibility: 0.000000
+Temperature: 25.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 25.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 25.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 26.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 26.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 26.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 26.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 26.05, Humidity: 36.000000, WeatherDescription: Haze, Visibility: 5000.000000
+Temperature: 26.05, Humidity: 38.000000, WeatherDescription: Clear, Visibility: 6000.000000
+[{date time: {temp:hj, }}]Temperature: 26.05, Humidity: 38.000000, WeatherDescription: Clear, Visibility: 6000.000000
+Temperature: 24.05, Humidity: 43.000000, WeatherDescription: Haze, Visibility: 3000.000000
