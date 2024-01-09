@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 #include "headers/cJSON.h"
 #include "headers/bashCalls.h"
 
@@ -68,83 +69,91 @@ EnvironmentalData parse_data(const char *json)
     return data;
 }
 
-// void save_data(EnvironmentalData data)
-// {
-//     const char *file_path = "enviro_store.json";
-
-//     // Read the existing JSON file
-//     FILE *file = fopen(file_path, "r");
-//     if (!file) {
-//         fprintf(stderr, "Error opening file for reading\n");
-//         return 1;
-//     }
-
-    // fseek(file, 0, SEEK_END);
-    // long file_size = ftell(file);
-    // fseek(file, 0, SEEK_SET);
-
-    // char *json_content = (char *)malloc(file_size + 1);
-    // fread(json_content, 1, file_size, file);
-    // json_content[file_size] = '\0';
-
-    // fclose(file);
-
-    // // Parse the existing JSON data
-    // cJSON *root = cJSON_Parse(json_content);
-    // free(json_content);
-
-    // if (!root) {
-    //     fprintf(stderr, "Error parsing JSON\n");
-    //     return 1;
-    // }
-
-    // // Append new records to the JSON array
-    // cJSON *new_records = cJSON_CreateArray();
-    // cJSON_AddItemToArray(new_records, cJSON_CreateObject());
-    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 0), "name", "Eve");
-    // cJSON_AddNumberToObject(cJSON_GetArrayItem(new_records, 0), "age", 28);
-    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 0), "city", "Chicago");
-
-    // cJSON_AddItemToArray(new_records, cJSON_CreateObject());
-    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 1), "name", "Charlie");
-    // cJSON_AddNumberToObject(cJSON_GetArrayItem(new_records, 1), "age", 35);
-    // cJSON_AddStringToObject(cJSON_GetArrayItem(new_records, 1), "city", "Seattle");
-
-    // cJSON_AddItemToArray(root, new_records);
-    
-    // // Write the updated JSON data back to the file
-    // file = fopen(file_path, "w");
-    // if (!file) {
-    //     fprintf(stderr, "Error opening file for writing\n");
-    //     cJSON_Delete(root);
-    //     return 1;
-    // }
-
-    // char *json_string = cJSON_Print(root);
-    // fprintf(file, "%s", json_string);
-    // fclose(file);
-//     free(json_string);
-
-//     cJSON_Delete(root);
-
-//     printf("New records have been appended to %s\n", file_path);
-
-//     return 0;
-// }
-
-int main(void)
+void save_data(EnvironmentalData data)
 {
-    EnvironmentalData data;
+    printf("Yes");
+    const char *file_path = "enviro_store.json";
+
+    // Read the existing JSON file
+    FILE *file = fopen(file_path, "r");
+    if (!file) {
+        fprintf(stderr, "Error opening file for reading\n");
+    }
+
+    fseek(file, 0, SEEK_END);
+    long file_size = ftell(file); // returns current position of stream
+    fseek(file, 0, SEEK_SET);
+
+    char *json_content = (char *)malloc(file_size + 1);
+    fread(json_content, 1, file_size, file);
+    json_content[file_size] = '\0';
+
+    fclose(file);
+
+    // Parse the existing JSON data
+    cJSON *root = cJSON_Parse(json_content);
+    free(json_content);
+
+    if (!root) {
+        fprintf(stderr, "Error parsing JSON\n");
+    }
+
+    time_t raw_time;
+    struct tm *current_time;
+
+    time(&raw_time);
+    current_time = localtime(&raw_time);
+
+    // Add date and time to cJSON object
+    char date_buffer[11]; // "YYYY-MM-DD\0"
+    char time_buffer[9];  // "HH:MM:SS\0"
+
+    strftime(date_buffer, sizeof(date_buffer), "%Y-%m-%d", current_time);
+    strftime(time_buffer, sizeof(time_buffer), "%H:%M:%S", current_time);
+
+    // Append new records to the JSON array
+    cJSON *new_records = cJSON_CreateObject();
+    cJSON_AddStringToObject(new_records, "Date", date_buffer);
+    cJSON_AddStringToObject(new_records, "Time", time_buffer);
+    cJSON_AddNumberToObject(new_records, "Temperature", data.temperature);
+    cJSON_AddNumberToObject(new_records, "Humidity", data.humidity);
+    cJSON_AddNumberToObject(new_records, "Visibility", data.visibility);
+    cJSON_AddStringToObject(new_records, "Weather Description", data.weatherDes);
+
+    cJSON_AddItemToArray(root, new_records);
+    
+    // Write the updated JSON data back to the file
+    file = fopen(file_path, "w");
+    if (!file) {
+        fprintf(stderr, "Error opening file for writing\n");
+        cJSON_Delete(root);
+    }
+
+    char *json_string = cJSON_Print(root);
+    fprintf(file, "%s", json_string);
+    fclose(file);
+    free(json_string);
+
+    cJSON_Delete(root);
+
+    printf("New records have been appended to %s\n", file_path);
+
+}
+
+int main(void){
+    EnvironmentalData data; // an array of struct EnvironmentalData
+
     char* cont = retrieveData();
     printf("%s", cont);
     data = parse_data(cont); // retrieves global variable containing content of current query
     check_anomaly(data);
-    // save_data(data);
+    save_data(data);
+
     return 0;
 }
 
 // command to link all the wrkspace files before execution
-// gcc bashCalls.c main.c  -o main libcjson.a  -lcurl -lm
+// gcc bashCalls.c main.c  -o main libcjson.a -lm
 // main         : object file
 // main.c       : source file   linked with
 // libcjson.a   : cjson library linked with

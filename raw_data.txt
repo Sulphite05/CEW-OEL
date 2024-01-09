@@ -161,4 +161,3 @@ Mon 08 Jan 2024 06:57:42 PM PKT
 {"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50n"}],"base":"stations","main":{"temp":295.05,"feels_like":294.68,"temp_min":295.05,"temp_max":295.05,"pressure":1017,"humidity":53},"visibility":2000,"wind":{"speed":3.09,"deg":130},"clouds":{"all":20},"dt":1704722060,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1704680266,"sunset":1704718670},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
 
 
-
