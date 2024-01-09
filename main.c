@@ -71,7 +71,7 @@ EnvironmentalData parse_data(const char *json)
 
 void save_data(EnvironmentalData data)
 {
-    printf("Yes");
+    
     const char *file_path = "enviro_store.json";
 
     // Read the existing JSON file

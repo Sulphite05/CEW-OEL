@@ -19,4 +19,11 @@
 		"Humidity":	24,
 		"Visibility":	4000,
 		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-09",
+		"Time":	"12:01:07",
+		"Temperature":	22.049999237060547,
+		"Humidity":	24,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
 	}]
