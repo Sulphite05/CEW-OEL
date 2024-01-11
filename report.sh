@@ -38,7 +38,15 @@ data=$(jq '.[] | select(.Date >= "'$last_monday'" and .Date <= "'$this_sunday'")
 
 # Format data
 new_data=$(jq -s '.' <<<$data) # formats dictionary objects in the array separated by commas
+
 formatted_data=$(jq -r '.[] | [.Date, .Time, .Temperature, .Humidity, .Visibility, .["Weather Description"]] | join("\t\t\t\t")' <<< "$new_data" | column -t -s $'\t\t\t\t')  # formats data into columns
+
+plot_data=$(jq -r '.[] | [.Date, .Time, .Temperature, .Humidity, .Visibility, .["Weather Description"]] | join(" ")' <<< "$new_data" | column -t -s $' ')  # formats data into columns
+
+
+cat << EOF > weather_data.dat
+$plot_data
+EOF
 
 # Generate the report
 cat << EOF > report.txt
@@ -51,17 +59,17 @@ cat << EOF > report.txt
                   *********************************************
                   *********************************************
 
-Average Temperature: $average_temperature °C
-Maximum Temperature: $max_temp°C
-Minimum Temperature: $min_temp°C
+Average Temperature:    $average_temperature °C
+Maximum Temperature:    $max_temp°C
+Minimum Temperature:    $min_temp°C
 
-Average Humidity: $average_humidity%
-Maximum Humidity: $max_humidity%
-Minimum Humidity: $min_humidity%
+Average Humidity:       $average_humidity%
+Maximum Humidity:       $max_humidity%
+Minimum Humidity:       $min_humidity%
 
-Average Visibilty: $average_visibility m
-Maximum Visibility: $max_visibility m
-Minimum Visibility: $min_visibility m
+Average Visibilty:      $average_visibility m
+Maximum Visibility:     $max_visibility m
+Minimum Visibility:     $min_visibility m
 
 DATA POINTS:
 ____________
@@ -72,10 +80,12 @@ ____________
 $formatted_data
 EOF
 
-echo "Report generated: report.txt"
+
+gnuplot plot_script.gp
+echo "Report generated: report.txt and weather_plot.png"
 echo "Sending Report"
 
-mutt -s "Weekly Report" -e "set content_type=text/plain" -a "report.txt" -- aqibaabdulqadir@gmail.com <<EOF
+mutt -s "Weekly Report" -e "set content_type=text/plain" -a "report.txt" "weather_plot.png" -- aqibaabdulqadir@gmail.com <<EOF
 Please review attached report.
 EOF
 
