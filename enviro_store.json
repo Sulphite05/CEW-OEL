@@ -1,29 +1,231 @@
 [{
-		"Date":	"2024-01-08",
+		"Date":	"2024-01-01",
+		"Time":	"22:10:15",
+		"Temperature":	17.05,
+		"Humidity":	48,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-01",
+		"Time":	"22:10:42",
+		"Temperature":	17.05,
+		"Humidity":	48,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-01",
+		"Time":	"22:21:02",
+		"Temperature":	17.05,
+		"Humidity":	48,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-02",
+		"Time":	"22:21:47",
+		"Temperature":	17.05,
+		"Humidity":	48,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-02",
+		"Time":	"14:51:02",
+		"Temperature":	23.05,
+		"Humidity":	31,
+		"Visibility":	5000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-02",
+		"Time":	"15:07:41",
+		"Temperature":	23.05,
+		"Humidity":	31,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-03",
+		"Time":	"15:13:07",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-03",
+		"Time":	"15:16:16",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-03",
+		"Time":	"15:16:21",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-04",
+		"Time":	"15:20:54",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-04",
+		"Time":	"15:41:30",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-04",
+		"Time":	"12:01:56",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-05",
+		"Time":	"12:13:09",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-05",
+		"Time":	"12:19:45",
+		"Temperature":	24.05,
+		"Humidity":	31,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-05",
+		"Time":	"13:47:24",
+		"Temperature":	25.05,
+		"Humidity":	36,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-06",
+		"Time":	"13:49:25",
+		"Temperature":	25.05,
+		"Humidity":	36,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-06",
+		"Time":	"14:30:31",
+		"Temperature":	25.05,
+		"Humidity":	29,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-06",
+		"Time":	"22:30:01",
+		"Temperature":	20.05,
+		"Humidity":	34,
+		"Visibility":	5000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-07",
+		"Time":	"23:00:01",
+		"Temperature":	19.05,
+		"Humidity":	39,
+		"Visibility":	5000
+	}, {
+		"Date":	"2024-01-07",
 		"Time":	"20:22:25",
 		"Temperature":	21.049999237060547,
 		"Humidity":	46,
 		"Visibility":	4000,
 		"Weather Description":	"Haze"
 	}, {
-		"Date":	"2024-01-08",
+		"Date":	"2024-01-07",
 		"Time":	"20:30:02",
 		"Temperature":	21.049999237060547,
 		"Humidity":	46,
 		"Visibility":	4000,
 		"Weather Description":	"Haze"
 	}, {
-		"Date":	"2024-01-09",
+		"Date":	"2024-01-08",
 		"Time":	"11:57:50",
 		"Temperature":	22.049999237060547,
 		"Humidity":	24,
 		"Visibility":	4000,
 		"Weather Description":	"Haze"
 	}, {
-		"Date":	"2024-01-09",
+		"Date":	"2024-01-08",
 		"Time":	"12:01:07",
 		"Temperature":	22.049999237060547,
 		"Humidity":	24,
 		"Visibility":	4000,
 		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-08",
+		"Time":	"19:34:50",
+		"Temperature":	21.049999237060547,
+		"Humidity":	23,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-09",
+		"Time":	"16:00:02",
+		"Temperature":	19.059999237060548,
+		"Humidity":	37,
+		"Visibility":	5000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-09",
+		"Time":	"20:00:02",
+		"Temperature":	17.049998233450548,
+		"Humidity":	34,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-09",
+		"Time":	"21:00:02",
+		"Temperature":	18.049999237060547,
+		"Humidity":	34,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-10",
+		"Time":	"13:13:14",
+		"Temperature":	20.049999237060547,
+		"Humidity":	39,
+		"Visibility":	4000,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-10",
+		"Time":	"20:13:14",
+		"Temperature":	16.899967847623547,
+		"Humidity":	33,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-10",
+		"Time":	"22:13:14",
+		"Temperature":	16.049999237060547,
+		"Humidity":	31,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-11",
+		"Time":	"17:24:30",
+		"Temperature":	25.049999237060547,
+		"Humidity":	23,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-11",
+		"Time":	"17:24:39",
+		"Temperature":	25.049999237060547,
+		"Humidity":	23,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-11",
+		"Time":	"17:46:46",
+		"Temperature":	24.049999237060547,
+		"Humidity":	25,
+		"Visibility":	6000,
+		"Weather Description":	"Clear"
 	}]
