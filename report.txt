@@ -7,17 +7,17 @@
                   *********************************************
                   *********************************************
 
-Average Temperature: 20.22 °C
-Maximum Temperature: 25.05°C
-Minimum Temperature: 16.05°C
+Average Temperature:    20.54 °C
+Maximum Temperature:    25.05°C
+Minimum Temperature:    16.05°C
 
-Average Humidity: 29.55%
-Maximum Humidity: 39.00%
-Minimum Humidity: 23.00%
+Average Humidity:       29.17%
+Maximum Humidity:       39.00%
+Minimum Humidity:       23.00%
 
-Average Visibilty: 5363.64 m
-Maximum Visibility: 6000.00 m
-Minimum Visibility: 4000.00 m
+Average Visibilty:      5416.67 m
+Maximum Visibility:     6000.00 m
+Minimum Visibility:     4000.00 m
 
 DATA POINTS:
 ____________
@@ -36,3 +36,4 @@ ____________
 2024-01-10        22:13:14        16.049999237060547        31        6000        Clear
 2024-01-11        17:24:30        25.049999237060547        23        6000        Clear
 2024-01-11        17:24:39        25.049999237060547        23        6000        Clear
+2024-01-11        17:46:46        24.049999237060547        25        6000        Clear
