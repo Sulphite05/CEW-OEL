@@ -147,4 +147,12 @@ Before getting started, make sure you have the following dependencies installed:
 
     [jq](https://stedolan.github.io/jq/)
 
+<<<<<<< HEAD
 >>>>>>> 8d521ca (On branch main)
+=======
+## Usage
+
+### 1. cJSON (Data Storage)
+
+cJSON is integrated into the system for efficient data storage. You can use cJSON to serialize and deserialize JSON data.
+>>>>>>> 9193553 (On branch main)
