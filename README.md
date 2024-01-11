@@ -1,5 +1,6 @@
 # API Reporting System
 
+<<<<<<< HEAD
 ## Overview
 
 Welcome to the API Reporting System! This system is designed to facilitate data storage, API communication, email functionality, and data analysis. The key components used in this system are C language for programming, [cJSON](https://github.com/DaveGamble/cJSON) for data storage, [libcurl](https://curl.se/libcurl/) for API communication, [mutt](https://mutt.org/) for mailing, [jq](https://stedolan.github.io/jq/) for data analysis, and [gnuplot](http://www.gnuplot.info/) for data visualisation.
@@ -119,3 +120,31 @@ Mehwish Hussain     CS22016 </br>
 Tooba Aftab         CS22020
 
 Happy coding!
+=======
+# API Reporting System
+
+## Overview
+
+Welcome to the API Reporting System! This system is designed to facilitate data storage, API communication, email functionality, and data analysis. The key components used in this system are [cJSON](https://github.com/DaveGamble/cJSON) for data storage, [libcurl](https://curl.se/libcurl/) for API communication, [mutt](https://mutt.org/) for mailing, and [jq](https://stedolan.github.io/jq/) for data analysis.
+
+## Requirements
+
+Before getting started, make sure you have the following dependencies installed:
+
+1. **cJSON**: A lightweight JSON library for data storage.
+
+    [cJSON GitHub](https://github.com/DaveGamble/cJSON)
+
+2. **libcurl**: A library for making HTTP requests, essential for API communication.
+
+    [libcurl](https://curl.se/libcurl/)
+
+3. **mutt**: A command-line email client for sending emails.
+
+    [mutt](https://mutt.org/)
+
+4. **jq**: A lightweight and flexible command-line JSON processor for data analysis.
+
+    [jq](https://stedolan.github.io/jq/)
+
+>>>>>>> 8d521ca (On branch main)
