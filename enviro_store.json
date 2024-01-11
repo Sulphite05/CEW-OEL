@@ -228,4 +228,11 @@
 		"Humidity":	25,
 		"Visibility":	6000,
 		"Weather Description":	"Clear"
+	}, {
+		"Date":	"2024-01-11",
+		"Time":	"20:00:03",
+		"Temperature":	21.049999237060547,
+		"Humidity":	40,
+		"Visibility":	5000,
+		"Weather Description":	"Haze"
 	}]

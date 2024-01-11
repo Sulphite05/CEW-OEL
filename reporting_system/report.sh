@@ -1,5 +1,4 @@
 #!/bin/bash
-
 data_file="enviro_store.json"
 
 # Get last Monday
@@ -8,11 +7,16 @@ last_monday=$(date +"%Y-%m-%d" -d "last monday")
 # Get this Sunday
 this_sunday=$(date +"%Y-%m-%d" -d "this sunday")
 
-# Extract values using jq
-temperatures=$(jq '.[] | select(.Date >= "'$last_monday'" and .Date <= "'$this_sunday'") | .Temperature' "$data_file")
-humidity=$(jq '.[] | select(.Date >= "'$last_monday'" and .Date <= "'$this_sunday'") | .Humidity' "$data_file")
-visibility=$(jq '.[] | select(.Date >= "'$last_monday'" and .Date <= "'$this_sunday'") | .Visibility' "$data_file")
+# Extract data for the week
+data=$(jq '.[] | select(.Date >= "'$last_monday'" and .Date <= "'$this_sunday'")' "$data_file") # this data is in the form of separate dictionaries
+new_data=$(jq -s '.' <<<$data) # formats dictionary objects in the array separated by commas
 
+# Extract values using jq
+temperatures=$(echo "$new_data" | jq -r '.[].Temperature')
+humidity=$(echo "$new_data" | jq -r '.[].Humidity')
+visibility=$(echo "$new_data" | jq -r '.[].Visibility')
+
+cd reporting_system/
 
 # Calculate the average using awk
 average_temperature=$(echo "$temperatures" | awk '{ sum += $1 } END { printf "%.2f\n", sum / NR }')
@@ -32,15 +36,11 @@ max_visibility=$(echo "$visibility" | awk 'BEGIN {max = -inf} {if ($1 > max) max
 min_visibility=$(echo "$visibility" | awk 'BEGIN {min = inf} {if (min == inf || $1 < min) min = $1} END {printf "%.2f\n", min}')
 
 
-# Extract data for the week
 
-data=$(jq '.[] | select(.Date >= "'$last_monday'" and .Date <= "'$this_sunday'")' "enviro_store.json") # this data is in the form of separate dictionaries
-
-# Format data
-new_data=$(jq -s '.' <<<$data) # formats dictionary objects in the array separated by commas
-
+# Format data for report
 formatted_data=$(jq -r '.[] | [.Date, .Time, .Temperature, .Humidity, .Visibility, .["Weather Description"]] | join("\t\t\t\t")' <<< "$new_data" | column -t -s $'\t\t\t\t')  # formats data into columns
 
+# Format data for gnuplot
 plot_data=$(jq -r '.[] | [.Date, .Time, .Temperature, .Humidity, .Visibility, .["Weather Description"]] | join(" ")' <<< "$new_data" | column -t -s $' ')  # formats data into columns
 
 
@@ -86,6 +86,7 @@ echo "Report generated: report.txt and weather_plot.png"
 echo "Sending Report"
 
 mutt -s "Weekly Report" -e "set content_type=text/plain" -a "report.txt" "weather_plot.png" -- aqibaabdulqadir@gmail.com <<EOF
-Please review attached report.
+Please review the attached weekly weather report.
 EOF
 
+cd ..
