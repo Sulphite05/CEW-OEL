@@ -154,5 +154,9 @@ Before getting started, make sure you have the following dependencies installed:
 
 ### 1. cJSON (Data Storage)
 
+<<<<<<< HEAD
 cJSON is integrated into the system for efficient data storage. You can use cJSON to serialize and deserialize JSON data.
 >>>>>>> 9193553 (On branch main)
+=======
+cJSON is integrated into the system for efficient data storage. You can use cJSON to serialize and deserialize JSON data..so
+>>>>>>> 4e8f16b (On branch main)
