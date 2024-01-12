@@ -1,36 +1,121 @@
-# CEW-OEL
-A repository to work on our CEW OEL
+# API Reporting System
 
-## CONTRIBUTORS
-CS22003 Aqiba Abdul Qadir <br/>   
-CS22016 Mahwish Hussain <br/>   
-CS22020 Tooba Aftab 
+## Overview
 
-In implementation of our code firstly we install some packages which includes;
-1.cJSON       
-usage:
-for data storage.
-2.libcurl 
-usage:
-Api
-3.mutt
-usage:
-mailing
-4.jq
-usage:
-analysis
+Welcome to the API Reporting System! This system is designed to facilitate data storage, API communication, email functionality, and data analysis. The key components used in this system are C language for programming, [cJSON](https://github.com/DaveGamble/cJSON) for data storage, [libcurl](https://curl.se/libcurl/) for API communication, [mutt](https://mutt.org/) for mailing, [jq](https://stedolan.github.io/jq/) for data analysis, and [gnuplot](http://www.gnuplot.info/) for data visualisation.
 
-cJSON is an ultra-lightweight JSON parser in C:
+## Requirements
 
-    1. Single file: Both the core functionality and header file are contained in a single file, making it easy to integrate into your projects.
-    2. Simple API: It focuses on a streamlined and intuitive API for working with JSON data.
-    3. No external dependencies: cJSON doesn't rely on any additional libraries, minimizing setup complexity.
-    4. Focus on parsing and manipulation: It primarily focuses on parsing JSON data and building complex JSON structures within your C programs.
-    5. Compact and efficient: cJSON boasts a small footprint and minimal resource usage, ideal for embedded systems and performance-critical applications.
+Before getting started, make sure you have the following dependencies installed:
 
-Common use cases for cJSON:
+1. **cJSON**: A lightweight JSON library for data storage.
 
-    1. Parsing JSON data received from servers or files.
-    2. Building and sending JSON requests to APIs.
-    3. Storing and manipulating JSON data within your C programs.
-    4. Exchanging data between C programs and other applications (web se
+    [cJSON GitHub](https://github.com/DaveGamble/cJSON)
+
+2. **libcurl**: A library for making HTTP requests, essential for API communication.
+
+    [libcurl](https://curl.se/libcurl/)
+
+3. **mutt**: A command-line email client for sending emails.
+
+    [mutt](https://mutt.org/)
+
+4. **jq**: A lightweight and flexible command-line JSON processor for data analysis.
+
+    [jq](https://stedolan.github.io/jq/)
+
+5. **gnuplot**: A library to process data for visualisation through graphs
+
+    [gnuplot](http://www.gnuplot.info/)
+
+
+## Usage
+
+### 1. cJSON (Data Storage)
+
+cJSON is integrated into the system for efficient data storage. You can use cJSON to serialize and deserialize JSON data. Here's a simple example in C:
+
+```c
+#include <stdio.h>
+#include "cJSON.h"
+
+int main() {
+    cJSON *root = cJSON_CreateObject();
+    cJSON_AddStringToObject(root, "name", "John Doe");
+    cJSON_AddNumberToObject(root, "age", 30);
+
+    char *jsonString = cJSON_Print(root);
+
+    // Store jsonString as needed
+
+    cJSON_Delete(root);
+    free(jsonString);
+
+    return 0;
+}
+```
+
+### 2. libcurl (API Communication)
+
+libcurl is utilized for making API requests. You can easily integrate it into your code to communicate with external APIs. Here's a basic example in C:
+
+```c
+#include <stdio.h>
+#include <curl/curl.h>
+
+int main() {
+    CURL *curl;
+    CURLcode res;
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com/data");
+        
+        // Set other options as needed
+        
+        res = curl_easy_perform(curl);
+        
+        // Check for errors
+        
+        curl_easy_cleanup(curl);
+    }
+
+    return 0;
+}
+```
+
+### 3. mutt (Mailing)
+
+For mailing functionality, mutt can be used to send emails from the command line. You can create and send emails with attachments as needed. Here's a basic example:
+
+```bash
+echo "Body of the email" | mutt -s "Subject" -a attachment.txt -- recipient@example.com
+```
+
+### 4. jq (Data Analysis)
+
+jq is employed for data analysis. You can use it to filter, transform, and manipulate JSON data from the command line. Here's a simple example:
+
+```bash
+cat data.json | jq '.users | .[] | select(.age > 25) | .name'
+```
+
+### 4. gnuplot (Data Visualisation)
+
+gnuplot is employed for data visualisation. You can use it to plot data from the dat files using gp files and the command line. Here's a simple example:
+
+```bash
+gnuplot plot_script.gp
+```
+
+## Project Usage
+
+This API Reporting System is a university project created for educational purposes. You are free to use, modify, and distribute the code for non-commercial, educational, and research purposes. However, please be mindful of academic integrity and give appropriate credit if you use or reference this project in your work.
+
+## Contributors
+
+Aqiba Abdul Qadir   CS22003 </br>
+Mehwish Hussain     CS22016 </br>
+Tooba Aftab         CS22020
+
+Happy coding!
