@@ -15,3 +15,4 @@ compile:
 
 run:
 	@$(RUN_COMMAND)
+	@rm -f main
