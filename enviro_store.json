@@ -229,10 +229,31 @@
 		"Visibility":	6000,
 		"Weather Description":	"Clear"
 	}, {
-		"Date":	"2024-01-11",
-		"Time":	"20:00:03",
+		"Date":	"2024-01-12",
+		"Time":	"14:00:03",
 		"Temperature":	21.049999237060547,
-		"Humidity":	40,
+		"Humidity":	45,
 		"Visibility":	5000,
 		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-12",
+		"Time":	"20:00:03",
+		"Temperature":	16.049999237060547,
+		"Humidity":	30,
+		"Visibility":	4500,
+		"Weather Description":	"Haze"
+	},{
+		"Date":	"2024-01-12",
+		"Time":	"22:00:03",
+		"Temperature":	14.049999237060547,
+		"Humidity":	40,
+		"Visibility":	5500,
+		"Weather Description":	"Haze"
+	}, {
+		"Date":	"2024-01-13",
+		"Time":	"08:14:04",
+		"Temperature":	11.050000190734863,
+		"Humidity":	76,
+		"Visibility":	2500,
+		"Weather Description":	"Smoke"
 	}]
