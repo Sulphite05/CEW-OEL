@@ -276,3 +276,8 @@ Thu Jan 11 08:00:02 PM PKT 2024
 
 
 
+Sat 13 Jan 2024 08:13:59 AM PKT
+{"coord":{"lon":67.0822,"lat":24.9056},"weather":[{"id":711,"main":"Smoke","description":"smoke","icon":"50d"}],"base":"stations","main":{"temp":284.05,"feels_like":283.18,"temp_min":284.05,"temp_max":284.05,"pressure":1017,"humidity":76},"visibility":2500,"wind":{"speed":2.06,"deg":50},"clouds":{"all":7},"dt":1705115429,"sys":{"type":1,"id":7576,"country":"PK","sunrise":1705112291,"sunset":1705150886},"timezone":18000,"id":1174872,"name":"Karachi","cod":200}
+
+
+
