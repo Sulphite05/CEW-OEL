@@ -1,6 +1,5 @@
 # API Reporting System
 
-<<<<<<< HEAD
 ## Overview
 
 Welcome to the API Reporting System! This system is designed to facilitate data storage, API communication, email functionality, and data analysis. The key components used in this system are C language for programming, [cJSON](https://github.com/DaveGamble/cJSON) for data storage, [libcurl](https://curl.se/libcurl/) for API communication, [mutt](https://mutt.org/) for mailing, [jq](https://stedolan.github.io/jq/) for data analysis, and [gnuplot](http://www.gnuplot.info/) for data visualisation.
